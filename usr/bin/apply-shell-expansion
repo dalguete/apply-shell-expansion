@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Expands a file contents
+#
+# All idea credit goes to 'wjl'
+# http://stackoverflow.com/a/20316582
+
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+if [[ $# = 0 || ! -e $1 ]]; then
+  echo -e >&2 "${RED}Usage: $0 </path/to/file>${NC}"
+  exit 1
+fi
+
+apply_shell_expansion() {
+  local EOF=EOF_$RANDOM
+  eval "cat <<$EOF"$'\n'"`cat $1`"$'\n'"$EOF"
+}
+
+apply_shell_expansion "$1"
+
