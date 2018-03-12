@@ -1,0 +1,22 @@
+name: apply-shell-expansion
+version: '0.1'
+summary: Helper utility used to expand shell variables defined in a file.
+description: |
+  With this script, you can expand the file with env variables defined before using
+  its contents. Originally conceived to help in the Docker container images creation,
+  when consumer scripts expected a plain string text (for the record, `debconf-set-selections`)
+  but you wanted to preprocess the file before using it.
+
+  Kudos to 'wjl' (http://stackoverflow.com/a/20316582)
+
+grade: stable
+confinement: strict
+
+apps:
+  apply-shell-expansion:
+    command: usr/bin/apply-shell-expansion
+
+parts:
+  apply-shell-expansion:
+    plugin: dump
+    source: src/
