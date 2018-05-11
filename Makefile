@@ -6,7 +6,7 @@ TARGET:=/
 # when they are empty. Only name those as they appear under SOURCE folder (if any).
 # If more than one level is set, list deepest entries first
 # Separate them with white spaces.
-ONLY_APP_FOLDERS:=carajo/
+ONLY_APP_FOLDERS:=
 
 # Basic configs
 .DEFAULT_GOAL:=info
