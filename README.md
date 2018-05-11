@@ -25,6 +25,7 @@ sudo make install
 ```
 
 Done! For upgrades, simply clone the project again and run the previous command again.
+To remove simply run `sudo make uninstall`
 
 # Snap Package
 
